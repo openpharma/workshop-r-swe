@@ -6,13 +6,23 @@ Welcome to the homepage of the workshop *"Good Software Engineering Practice for
 
 ## Next Event
 
-There is no date for a new event yet.
+The next event will be online hosted from Roche Shanghai, so perfect for attendees from Asia!
+Please mark the Friday 24th March 2023 and register here:
+![](resources/asia-24Mar2023-barcode.png)
+Please note that all the content will be in English. 
+Workshop invitations and preparation details for the practice will be sent out in emails.
+This event is sponsored/organized by Roche PD China Data Sciences and advertised also through
+the R User Group (RUG) China. Presenters will be Daniel Sabanes Bove, Liming Li, Shuang Li and Joe Zhu.
+
+We are looking forward to many online participants!
 
 ## Communication
 
 We offer a [gitter chat channel](https://matrix.to/#/#workshop-r-swe_community:gitter.im) to communicate before, during, and after the course.
 
 ## Workshop Program
+
+This is the program for 24th March 2023, all times in China Standard Time (GMT+8):
 
 ```{r}
 #| echo: false
@@ -28,7 +38,7 @@ Prior to the course, participants should
 -   download and extract [simulatr.zip](slides/download/simulatr.zip)
 -   either make sure they have a working R software development setup on their own laptop (up-to-date git/Rtools/R/RStudio) or get access to <https://posit.cloud>. The latter offers a free tier account with 25 hours of computing time per months and can be accessed using ones GitHub.com account.
 
-For the course, participants are required to bring their own laptop to be able to participate in the exercises.
+For the course, participants are required to use their own laptop to be able to participate in the exercises.
 
 ### Optional reading list
 
@@ -39,3 +49,7 @@ For the course, participants are required to bring their own laptop to be able t
 -   Command line git mini intro [trygit](https://trygit.js.org/)
 -   [first steps with git & github by RStudio](https://www.youtube.com/watch?v=jN6tvgt3GK8)
 -   [RStudio cheatsheets/ Git & GitHub](https://github.com/rstudio/cheatsheets/blob/main/git-github.pdf)
+
+## Past Events
+
+- 10th February 2023, Basel
