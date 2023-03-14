@@ -1,6 +1,6 @@
 ---
 title: "1 Introduction"
-author: "Daniel, Friedrich, Kevin"
+author: "Daniel, Liming, Shuang, Joe"
 description: "Introduction and outline of program.</br>[Photo CC0 by Mabel Amber on pexels.com]{.copyright}"
 image: thumbnails/hello.jpg
 ---
@@ -9,7 +9,7 @@ image: thumbnails/hello.jpg
 
 </br></br></br>
 
-*Any opinions expressed in this presentation and on the following slides are solely those of the presenter and not necessarily those of their respective employer or company.*
+*Any opinions expressed in this presentation and on the following slides are solely those of the presenter and not necessarily those of Roche.*
 
 ## Daniel
 
@@ -26,36 +26,42 @@ image: thumbnails/hello.jpg
 :::
 :::
 
-## Friedrich
+## Liming
 
 ::: columns
 ::: {.column width="70%"}
--   Since 2008 self-employed consultant for computer science and data science as well as biostatistics
--   Co-founder and CEO of RPACT, a company developing the formally validated R package [rpact](https://cran.r-project.org/package=rpact "rpact: Confirmatory Adaptive Clinical Trial Design and Analysis") with 21 releases on CRAN since 2018
--   Trained software architect; R programmer since 2004; R Shiny developer since 2019
+-   ...
 -   Feel free to connect at [`r fontawesome::fa("linkedin")` LinkedIn](http://www.linkedin.com/in/pahlke "Friedrich Pahlke at LinkedIn") or [`r fontawesome::fa("github")` Github](https://github.com/fpahlke "Friedrich Pahlke at GitHub")
 :::
 
 ::: {.column width="30%"}
-![](resources/friedrich_pahlke.jpg)
+<!-- ![](resources/friedrich_pahlke.jpg) -->
 :::
 :::
 
-## Kevin
+## Joe
 
 ::: columns
-::: {.column width="30%"}
-![](resources/kevin.jpg)
+::: {.column width="70%"}
+-   ...
+-   Feel free to connect at [`r fontawesome::fa("linkedin")` LinkedIn](http://www.linkedin.com/in/pahlke "Friedrich Pahlke at LinkedIn") or [`r fontawesome::fa("github")` Github](https://github.com/fpahlke "Friedrich Pahlke at GitHub")
 :::
 
+::: {.column width="30%"}
+<!-- ![](resources/friedrich_pahlke.jpg) -->
+:::
+:::
+
+## Shuang
+
+::: columns
 ::: {.column width="70%"}
--   Trained in math, 'statistical engineer' by heart
--   Research associate in Heidelberg & Cambridge
-    -   optimal clinical trial design
-    -   statistical genetics & high dimensional data
--   Methodology statistician with BI since '21
--   R-tist, extensive experience with R packages, version control, and high-performance computing
--   feel free to connect at `r fontawesome::fa("linkedin")` [LinkedIn](https://www.linkedin.com/in/kevin-kunzmann-6486a11bb/) or `r fontawesome::fa("github")` [Github](https://github.com/kkmann)
+-   ...
+-   Feel free to connect at [`r fontawesome::fa("linkedin")` LinkedIn](http://www.linkedin.com/in/pahlke "Friedrich Pahlke at LinkedIn") or [`r fontawesome::fa("github")` Github](https://github.com/fpahlke "Friedrich Pahlke at GitHub")
+:::
+
+::: {.column width="30%"}
+<!-- ![](resources/friedrich_pahlke.jpg) -->
 :::
 :::
 
@@ -68,6 +74,7 @@ image: thumbnails/hello.jpg
 -   Get crash-course in version control to stay organized
 -   Try out modern collaboration techniques on GitHub.com
 -   Learn how to make an R `r fontawesome::fa("cube")` available to others
+-   Get a starting point for sustainable Shiny app development
 
 ## Program outline
 
@@ -79,14 +86,14 @@ readr::read_csv("resources/program.csv", col_types = "cc") |>
 
 ## House-keeping
 
--   Course website at [kkmann.github.io/workshop-r-swe](https://kkmann.github.io/workshop-r-swe)
+-   Course website at [openpharma.github.io/workshop-r-swe](https://openpharma.github.io/workshop-r-swe)
     -   all slides
-    -   sources available at [github.com/kkmann/workshop-r-swe](https://github.com/kkmann/workshop-r-swe)
+    -   sources available at [github.com/openpharma/workshop-r-swe](https://github.com/openpharma/workshop-r-swe)
     -   all materials CC-BY 4.0
--   We have a [gitter chat channel](https://gitter.im/workshop-r-swe/community) for this course that you can connect to
+-   We have a chat channel (add link here) for this course that you can connect to
     -   use to ask your peers questions
     -   will try to monitor during course
--   [slido.com](https://www.slido.com): #3112331
+-   slido alternative to come here
 
 ## What you will need
 
