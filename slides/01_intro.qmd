@@ -93,7 +93,7 @@ readr::read_csv("resources/program.csv", col_types = "cc") |>
 -   We have a chat channel (add link here) for this course that you can connect to
     -   use to ask your peers questions
     -   will try to monitor during course
--   slido alternative to come here
+-   [menti.com](menti.com): 4458 3431
 
 ## What you will need
 
@@ -107,7 +107,11 @@ readr::read_csv("resources/program.csv", col_types = "cc") |>
 -   Curiosity `r emoji::emoji("curious")`
 -   Positive attitude `r emoji::emoji("smile")`
 
-##  {background-iframe="https://wall.sli.do/event/aw8yLdhevoVZxt8CJ5ytHG?section=36e6981e-61e0-418c-aaf4-954adbedfd81" background-interactive="true"}
+## Enter Menti
+
+![](resources/mentimeter_qr_code.png)
+
+##  {background-iframe="https://www.mentimeter.com/app/presentation/alunb5x5bjy78a86vwrsac53qhau9uoi/embed" background-interactive="true"}
 
 ## What do we mean by GSWEP4R\*?
 
