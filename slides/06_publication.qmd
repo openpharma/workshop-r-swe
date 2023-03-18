@@ -143,7 +143,7 @@ package took 5 weeks and 6 submission attempts; painful experiences:
 -   Don't use "R Package for" in your package title
 -   The description of the package must be provided with a doi reference
 
-## CRAN (cont'd)
+## CRAN (cont'd) {.scrollable}
 
 Example message informing about the rejection of the last
 [rpact](https://cran.r-project.org/package=rpact) submission:
