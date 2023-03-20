@@ -30,12 +30,14 @@ image: thumbnails/hello.jpg
 
 ::: columns
 ::: {.column width="70%"}
--   ...
--   Feel free to connect at [`r fontawesome::fa("linkedin")` LinkedIn](http://www.linkedin.com/in/pahlke "Friedrich Pahlke at LinkedIn") or [`r fontawesome::fa("github")` Github](https://github.com/fpahlke "Friedrich Pahlke at GitHub")
+-   Master in Biostatistics from Fudan University
+-   Statistical Programmer in Roche for 4 years, technical engineering lead for chevron team in NEST project
+-   Member of ASA BIOP working group on Software Engineering (SWE WG) mmrm taskforce
+-   Feel free to connect at [`r fontawesome::fa("github")` Github](https://github.com/clarkliming "Liming GitHub")
 :::
 
 ::: {.column width="30%"}
-<!-- ![](resources/friedrich_pahlke.jpg) -->
+![](resources/liming.jpg)
 :::
 :::
 
