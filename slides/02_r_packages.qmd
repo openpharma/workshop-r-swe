@@ -76,7 +76,7 @@ Nowadays, it is super fast with:
   - Consider permissive licenses such as Apache and MIT.
 - *Depends*:
   - Which R version users need to have at least.
-  - Do not recommend putting any package in *Depends* field
+  - Ideally don't put any package here.
   - Packages will be loaded and attached upon `library` your package.
 - *Imports*: Packages which you import functions, methods, classes from.
 - *Suggests*: Packages for documentation processing (`roxygen2`), running examples, tests (`testthat`), vignettes.
@@ -87,7 +87,7 @@ Nowadays, it is super fast with:
   - Can create a file with `usethis::use_r("filename")`
 - Assigns R objects, i.e. mostly functions, but could also be constant variables, data sets, etc.
 - Should not have any side effects, i.e. avoid `require()`, `options()` etc.
-- If certain code needs to be sourced first, use on top of file(which will update `Collate` field of `DESCRIPTION` automatically).
+- If certain code needs to be sourced first, use on top of file (which will update the `Collate` field of `DESCRIPTION` automatically).
 
 ```{r}
 #| echo: true
