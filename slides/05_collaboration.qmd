@@ -1,6 +1,6 @@
 ---
 title: "5 Version Control & Collaboration"
-author: "Kevin"
+author: "Shuang"
 description: "Collaboration via GitHub + practical<br/>[Photo CC0 by THIS IS ZUN on pexels.com]{.copyright}"
 image: thumbnails/collaboration.jpg
 ---
@@ -69,8 +69,8 @@ Photo from <a href="https://unsplash.com/@timmossholder?utm_source=unsplash&utm_
 flowchart LR
   A[<font size=4> Kevin v1] --> B[<font size=4> Kevin v2]
   B --> C[<font size=4> Kevin v3]
-  B --> D[<font size=4> Daniel v1]
-  D --> E[<font size=4> Kevin + Daniel v4]
+  B --> D[<font size=4> Shuang v1]
+  D --> E[<font size=4> Kevin + Shuang v4]
   C --> E
 ```
 
@@ -269,7 +269,7 @@ gitGraph
 
 - git itself is command line tool for version control
 - **git platforms add UI for collaboration**^[All platforms also available on-premise for enterprise use]
-    - [GitHub.com](https://github.com) de facto standard in R (alternative: [GitLab.com](https://gitlab.com/))
+    - [GitHub.com](https://github.com) de facto standard in R (alternative: [GitLab.com](https://gitlab.com/), [Gitee.com](https://gitee.com/))
 - git + GitHub
   - VCS (git)
   - Web hosting of code (GitHub)
@@ -303,7 +303,7 @@ gitGraph
 
 ## Automating things with GitHub
 
-- GitHub provides 
+- GitHub provides
     - cloud compute
     - scripting framework ([GitHub actions](https://github.com/features/actions))
 - Allows task automation, e.g.
@@ -319,23 +319,23 @@ gitGraph
 sequenceDiagram
     participant K as Kevin
     participant GH as GitHub server
-    participant D as Daniel
+    participant S as Shuang
     K->>K: make change locally & commit to <feature>
     K->>GH: push commit
     K->>GH: open pull request
     GH->>GH: run automated checks
-    K->>D: request review
-    D->>D: review code
-    D->>K: request changes
+    K->>S: request review
+    S->>S: review code
+    S->>K: request changes
     K->>K: implement changes locally & commit
     K->>GH: push commit
     GH->>GH: run automated checks
-    K->>D: request review
-    D->>D: review code
-    D->>GH: approve changes, unblocking merge
+    K->>S: request review
+    S->>S: review code
+    S->>GH: approve changes, unblocking merge
     K->>GH: merge <feature> into <main>
     GH->>GH: run automated checks on <main>
-    D->>GH: pull newest version of <main>
+    S->>GH: pull newest version of <main>
 ```
 
 ## Looks awefully complicated, why?
@@ -356,7 +356,7 @@ sequenceDiagram
 
 ## Practical - collaboration on GitHub
 
--   Work in teams of ~3
+-   Work in teams of ~ 3 or 4
 -   Go to <https://github.com/kkmann/simulatr> and read through the instructions
     in the README.md file
 -   The repository is a **template** to practice collaboration on GitHub
@@ -365,5 +365,5 @@ sequenceDiagram
 -   Take some time to checkout the `README.md` file and set up your
     environment in posit cloud
 -   **Can you fix the errors with some pull requests?**
--   The purpose of this exercise is to explore the collaboration 
+-   The purpose of this exercise is to explore the collaboration
     functionality of GitHub - not to produce a perfect package ;)
