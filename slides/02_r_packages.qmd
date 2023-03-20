@@ -87,7 +87,7 @@ Nowadays, it is super fast with:
   - Can create a file with `usethis::use_r("filename")`
 - Assigns R objects, i.e. mostly functions, but could also be constant variables, data sets, etc.
 - Should not have any side effects, i.e. avoid `require()`, `options()` etc.
-- If certain code needs to be sourced first, use on top of file(which will update `Collate` field of `DESCRIPTION` automatically).
+- If certain code needs to be sourced first, use on top of file (which will update the `Collate` field of `DESCRIPTION` automatically).
 
 ```{r}
 #| echo: true
