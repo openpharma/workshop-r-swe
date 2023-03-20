@@ -76,7 +76,7 @@ Nowadays, it is super fast with:
   - Consider permissive licenses such as Apache and MIT.
 - *Depends*:
   - Which R version users need to have at least.
-  - Do not recommend putting any package in *Depends* field
+  - Ideally don't put any package here.
   - Packages will be loaded and attached upon `library` your package.
 - *Imports*: Packages which you import functions, methods, classes from.
 - *Suggests*: Packages for documentation processing (`roxygen2`), running examples, tests (`testthat`), vignettes.
