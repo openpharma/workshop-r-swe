@@ -1,0 +1,138 @@
+---
+title: "8 Shiny Development"
+author: "Daniel"
+description: "Best Practices for Shiny App Development<br/>[Photo by Pixabay on pexels.com]{.copyright}"
+image: thumbnails/shiny.jpg
+---
+
+## Why are best practices important for Shiny?
+
+- Shiny is in itself more complex than usual R code
+- Small apps can quickly evolve into giant apps
+- It seems first possible to test everything by hand, clicking around
+- For one-off, throw-away, one-screen Shiny apps that is ok.
+- Here we talk about best practices for more-than-once used Shiny apps
+
+# Design
+
+## Design: Collaborate with your customer
+
+- Involve your customer from the first ideation
+- Identify the roles and responsibilities
+- Make reasonable assumptions about user skills and knowledge
+- Show early wireframes, prototypes, beta versions and get feedback
+
+## UI Design: Wireframing
+
+- Wireframing is powerful for aligning in customer discussions
+- Focus on the vision and functionality
+- Keep the UI as simple as possible
+- Know your target as developer during coding and review process
+- Wireframing software:
+  - [draw.io](https://draw.io)
+  - [Balsamiq](https://balsamiq.com/)
+  
+## UI Design: Example wireframe
+
+![](resources/wireframe.png){fig-align="center"}
+
+# Architecture
+
+## Architecture: Minimize code in Shiny
+
+- Minimize the code inside the Shiny UI/server
+- Because it will always be easier to test things that live outside of Shiny
+- Let's look at an example from the [Mastering Shiny](https://mastering-shiny.org/scaling-functions.html#function-upload) book
+
+## Minimize Shiny Example: Before
+
+::: columns
+::: {.column width="50%"}
+```{r, echo = TRUE}
+#| code-line-numbers: "6-11"
+#| style: font-size:0.7em!important;
+server <- function(input, output, session) {
+  data <- reactive({
+    req(input$file)
+    name <- input$file$name
+    path <- input$file$datapath
+    ext <- tools::file_ext(name)
+    switch(ext,
+      csv = vroom::vroom(path, ","),
+      tsv = vroom::vroom(path, "\t"),
+      validate("Invalid file")
+    )
+  })
+  
+  output$head <- renderTable({
+    head(data(), input$n)
+  })
+}
+```
+:::
+
+::: {.column width="50%"}
+The `ext` and `switch()` part validates the file extension and then loads the 
+file.
+
+Independent of Shiny reactive!
+:::
+:::
+
+## Minimize Shiny Example: After
+
+::: columns
+::: {.column width="50%"}
+```{r, echo = TRUE}
+#| code-line-numbers: "1-8,13-16"
+#| style: font-size:0.7em!important;
+load_file <- function(name, path) {
+  ext <- tools::file_ext(name)
+  switch(ext,
+    csv = vroom::vroom(path, ","),
+    tsv = vroom::vroom(path, "\t"),
+    validate("Invalid file")
+  )
+}
+
+server <- function(input, output, session) {
+  data <- reactive({
+    req(input$file)
+    load_file(
+      input$file$name, 
+      input$file$datapath
+    )
+  })
+  
+  output$head <- renderTable({
+    head(data(), input$n)
+  })
+}
+```
+:::
+
+::: {.column width="50%"}
+1) normal function, `validate()` will give a simple error outside of Shiny
+
+2) server is much easier to read now and only half the size
+
+3) can test `load_file()` interactively in console
+
+4) can unit tests `load_file()` separately (business as usual)
+:::
+:::
+
+## Minimize Shiny: Separate packages
+
+- On the macro level, this also applies to packages
+- Larger Shiny apps will need to live as an R package
+- The business logic best lives in another R package
+- That package can then also be used without the Shiny interface
+- You can use `staged.dependencies` to allow "joint" pull requests
+- Example: `teal.modules.clinical` as the Shiny package, `tern` as a business logic package
+
+# References
+
+-   Adrian Waddell, Pawel Rucki, Daniel Sabanes Bove (2022).
+    Lessons for designing scalable and maintainable Shiny apps Tutorial at useR 2022.
+    \[[Youtube recording](https://www.youtube.com/watch?v=7o9qjsw4aDU)\]

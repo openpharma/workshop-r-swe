@@ -7,7 +7,7 @@ image: thumbnails/conclusion.jpg
 
 # Temperature check
 
-##  {background-iframe="https://wall.sli.do/event/aw8yLdhevoVZxt8CJ5ytHG?section=36e6981e-61e0-418c-aaf4-954adbedfd81" background-interactive="true"}
+## To do
 
 # Take away messages
 
@@ -37,9 +37,9 @@ image: thumbnails/conclusion.jpg
     -   Use [styler](https://styler.r-lib.org) to optimize the code styling
     -   Don't repeat yourself!
 -   Your rewards are:
-    -   [{{< fa trophy size=1x >}}]{.yellow} **Maintainability**,
-    -   [{{< fa trophy size=1x >}}]{.yellow} **Extensibility**, and
-    -   [{{< fa trophy size=1x >}}]{.yellow} **Performance**!
+    -   **Maintainability**,
+    -   **Extensibility**, and
+    -   **Performance**!
 
 ## Collaboration
 
