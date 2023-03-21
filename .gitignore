@@ -9,5 +9,6 @@ _site
 .Rbuildignore
 
 docs
+.luarc.json
 
 /.luarc.json

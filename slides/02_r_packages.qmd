@@ -12,8 +12,8 @@ image: thumbnails/packages.jpg
 - Packages provide a mechanism for loading optional code, data and documentation as needed.
 - A library is a directory into which packages are installed. 
 - `install.packages()` and `R CMD INSTALL` is used to install packages into the library.
-- `library()` is used to load packages from the library.
-  - This attaches the packages at the same time.
+- `library()` is used to load and attach packages from the library.
+  - attach means that the package is put in your `search` list (objects in the package can be used directly).
 - Remember that package $\neq$ library!
   
 ## What we want to talk about now
@@ -76,7 +76,8 @@ Nowadays, it is super fast with:
   - Consider permissive licenses such as Apache and MIT.
 - *Depends*:
   - Which R version users need to have at least.
-  - Packages that are loaded upon loading your package.
+  - Ideally don't put any package here.
+  - Packages will be loaded and attached upon `library` your package.
 - *Imports*: Packages which you import functions, methods, classes from.
 - *Suggests*: Packages for documentation processing (`roxygen2`), running examples, tests (`testthat`), vignettes.
 
@@ -86,7 +87,7 @@ Nowadays, it is super fast with:
   - Can create a file with `usethis::use_r("filename")`
 - Assigns R objects, i.e. mostly functions, but could also be constant variables, data sets, etc.
 - Should not have any side effects, i.e. avoid `require()`, `options()` etc.
-- If certain code needs to be sourced first, use on top of file:
+- If certain code needs to be sourced first, use on top of file (which will update the `Collate` field of `DESCRIPTION` automatically).
 
 ```{r}
 #| echo: true
@@ -293,6 +294,7 @@ export(my_sum)
 - Note: During development it is usually sufficient to use Build > More > Load All
   - Runs `devtools::load_all()` 
   - Roughly simulates what happens when package would be installed and loaded
+  - **Unexported** objects and helpers under `tests` will also be available
   - Key: much faster!
 
 # Exercise
@@ -310,6 +312,7 @@ export(my_sum)
 
 # References
 
+- [R Packages (2e)](https://r-pkgs.org/)
 - [Writing R Extensions](https://cran.r-project.org/doc/manuals/R-exts.html)
 - [Rewriting R code in C++](https://adv-r.hadley.nz/rcpp.html)
 - [Super technical details about R Markdown](https://www.youtube.com/watch?v=fiy32LjgGUE)
