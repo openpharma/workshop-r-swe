@@ -131,6 +131,7 @@ server <- function(input, output, session) {
 - You can use `staged.dependencies` to allow "joint" pull requests
 - Example: `teal.modules.clinical` as the Shiny package, `tern` as a business logic package
 
+Cont here: https://docs.google.com/presentation/d/1byAK1rsTGLRW9thyA1gny6Xxvx5QIzUUdEO2wpGBEJw
 # References
 
 -   Adrian Waddell, Pawel Rucki, Daniel Sabanes Bove (2022).
