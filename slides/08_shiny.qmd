@@ -131,7 +131,57 @@ server <- function(input, output, session) {
 - You can use `staged.dependencies` to allow "joint" pull requests
 - Example: `teal.modules.clinical` as the Shiny package, `tern` as a business logic package
 
-Cont here: https://docs.google.com/presentation/d/1byAK1rsTGLRW9thyA1gny6Xxvx5QIzUUdEO2wpGBEJw
+# Modules
+
+## Modules: Building blocks of the Shiny app
+
+- Shiny modules generalize functions 
+- Allows to coordinate UI and server code
+- Breaks the app code into reusable and testable units
+- Let's look at an example from the [Mastering Shiny](https://mastering-shiny.org/scaling-modules.html#module-motivation) book
+
+## Modules Example: Before
+
+::: columns
+::: {.column width="60%"}
+![](resources/without-modules.png){fig-align="center"}
+:::
+
+::: {.column width="40%"}
+- Difficult to understand what is going on
+- Need longer names / parentheses to differentiate tables / plots / variables
+in different places
+- Hard to test
+:::
+:::
+
+## Modules Example: After
+
+::: columns
+::: {.column width="60%"}
+![](resources/with-modules.png){fig-align="center"}
+:::
+
+::: {.column width="40%"}
+- Can easily see the 4 different parts of the app
+- Naming becomes simpler for vars / tables / plots
+- Can reuse the modules separately in other apps
+- Can test the modules separately
+:::
+:::
+
+## Modules: Considerations similar to Functions
+
+- What should be configurable? 
+  - Think about reuse needs for module
+- How to organize arguments?
+    - Use consistent naming conventions
+    - Keep the right order of the arguments
+- Avoid dependencies between arguments
+  - Use instead parameter object pattern
+- How to write good and maintainable code?
+  - Follow all the clean code rules from the previous chapter!
+
 # References
 
 -   Adrian Waddell, Pawel Rucki, Daniel Sabanes Bove (2022).
