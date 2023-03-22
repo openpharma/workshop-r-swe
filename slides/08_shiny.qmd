@@ -3,6 +3,8 @@ title: "8 Shiny Development"
 author: "Daniel"
 description: "Best Practices for Shiny App Development<br/>[Photo by Pixabay on pexels.com]{.copyright}"
 image: thumbnails/shiny.jpg
+editor_options: 
+  chunk_output_type: console
 ---
 
 ## Why are best practices important for Shiny?
@@ -181,6 +183,204 @@ in different places
   - Use instead parameter object pattern
 - How to write good and maintainable code?
   - Follow all the clean code rules from the previous chapter!
+  
+# Reactivity
+
+## Reactivity
+
+When building production shiny apps you won't get around learning reactivity.
+
+Some guidance:
+
+- Keep user interface simple → often keeps reactivity simple → often less confusing to user
+- Resolve reactive inputs early on & validate generously
+- Design towards "stringy" reactivity graphs
+- Don't interrupt reactivity
+- Preferably use
+  - `reactive` over `reactiveValues` 
+  - `observeEvent` over `observe`
+
+## Reactivity: Resolve early & validate generously
+
+```{r, echo = TRUE}
+#| code-line-numbers: "3-6,8-13"
+server <- function(input, output, session) {
+  output$plot <- renderPlot({
+    # resolve reactive values
+    xvar <- input$xvar
+    yvar <- input$yvar
+    req(xvar, yvar)
+    
+    # validate – is it likely that the plot will be meaningful?
+    validate(
+      need(xvar %in% names(df), glue("xvar \"{xvar}\" does not exist in data")),
+      need(yvar %in% names(df), glue("yvar \"{yvar}\" does not exist in data")),
+      need(nrow(df) > 3, "too few data points for meaningful plot")
+    )
+    
+    # write "business logic" in a unit testable function
+    my_special_plot(df[[xvar]], df[[yvar]])
+  })
+}
+```
+
+## Reactivity: Debugging with global variables
+
+```{r, echo = TRUE}
+#| code-line-numbers: "16"
+server <- function(input, output, session) {
+  output$plot <- renderPlot({
+    # resolve reactive values
+    xvar <- input$xvar
+    yvar <- input$yvar
+    req(xvar, yvar)
+    
+    # validate – is it likely that the plot will be meaningful?
+    validate(
+      need(xvar %in% names(df), glue("xvar \"{xvar}\" does not exist in data")),
+      need(yvar %in% names(df), glue("yvar \"{yvar}\" does not exist in data")),
+      need(nrow(df) > 3, "too few data points for meaningful plot")
+    )
+    
+    # write "business logic" in a unit testable function
+    .GlobalEnv$xvar <- xvar; .GlobalEnv$yvar <- yvar;  stop()
+    my_special_plot(df[[xvar]], df[[yvar]])
+  })
+}
+```
+
+## Reactivity: "Stringy" reactivity graph
+
+::: columns
+::: {.column width="50%"}
+Bad
+![](resources/connected.png){fig-align="center"}
+Many edges, difficult to anticipate reactivity behaviour
+:::
+ 
+::: {.column width="50%"}
+Good
+![](resources/stringy.png){fig-align="center"}
+This "stringy" reactivity graph is easier to understand and debug
+:::
+:::
+
+# Testing
+
+## Testing: From Icecream to Pyramid
+
+::: columns
+::: {.column width="50%"}
+Bad
+
+![](resources/icecream.png){height=400}
+
+- cannot always test manually
+- can easily introduce bugs
+:::
+ 
+::: {.column width="50%"}
+Good
+
+![](resources/pyramid.png){height=400}
+
+- manual testing is reduced
+- only for "playing around"
+:::
+:::
+
+## Testing: Snapshot tests for UI
+
+::: columns
+::: {.column width="50%"}
+```{r, echo = TRUE, eval = FALSE}
+#| code-line-numbers: "5-9"
+test_that("myInput UI works", {
+  input <- "foo"
+  set.seed(123)
+  datasets <- mock_datasets()
+  expect_snapshot(myInput(
+    "my_test",
+    datasets = datasets,
+    input = input
+  ))
+})
+```
+:::
+
+::: {.column width="50%"}
+- Shiny UI functions return shiny tag objects, i.e. HTML code
+- Can use snapshot tests to avoid accidental changes
+- Value is limited
+- Can create issues sometimes (non-reproducible hashes)
+:::
+:::
+
+## Testing: Shiny server tests
+
+::: columns
+::: {.column width="50%"}
+```{r, echo = TRUE, eval = FALSE}
+test_that("server works", {
+  testServer(server, {
+    session$setInputs(...)
+
+    print(reactive1())
+    print(output$output1)
+    # etc
+
+    # To interactively play:
+    # browser()
+  
+    expect_equal(...)
+    # etc.
+  })
+})
+
+```
+:::
+
+::: {.column width="50%"}
+- Code is run inside the server function
+- Can access reactives, outputs, etc.
+- Session object simulates user actions and time
+- Note: need to insert `browser()`
+- Also works for module server functions
+- Limitation: No UI, no JavaScript
+:::
+:::
+
+## Testing: Shiny app tests
+
+::: columns
+::: {.column width="50%"}
+```{r, echo = TRUE, eval = FALSE}
+test_that("my app works", {
+  library(shinytest)
+  app <- ShinyDriver$new(
+    "myAppDir/",
+    loadTimeout = 1e5, 
+    phantomTimeout = 1e5,
+    debug = "all"
+  ) # app$getDebugLog()
+  app$takeScreenshot()
+  app$setInputs(name = "Hadley")
+  app$getValue("greeting")
+  app$click("reset")
+  app$getValue("greeting")
+})
+```
+:::
+
+::: {.column width="50%"}
+- `{shinytest2}` is recent alternative
+- Usually the app is defined in `myAppDir/app.R`
+- New app instance from `ShinyDriver$new()`
+- Full Shiny app in a headless browser
+- Can look into it via `takeScreenshot()`
+- We can set inputs, get values of inputs/outputs, click buttons etc.
+:::
+:::
 
 # References
 
