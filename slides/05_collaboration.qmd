@@ -92,7 +92,7 @@ flowchart LR
 -   Optimized to compute line-based changes
 -   Integrated in RStudio IDE, Visual Studio Code
 -   De facto standard not just in the R world
--   Alternatives: mercurial, SCM, ...
+-   Alternatives: mercurial, SVN, ...
 :::
 :::
 
