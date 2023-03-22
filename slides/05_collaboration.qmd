@@ -67,10 +67,10 @@ Photo from <a href="https://unsplash.com/@timmossholder?utm_source=unsplash&utm_
 
 ```{mermaid}
 flowchart LR
-  A[<font size=4> Kevin v1] --> B[<font size=4> Kevin v2]
-  B --> C[<font size=4> Kevin v3]
-  B --> D[<font size=4> Shuang v1]
-  D --> E[<font size=4> Kevin + Shuang v4]
+  A[<font size=4> Shuang v1] --> B[<font size=4> Shuang v2]
+  B --> C[<font size=4> Shuang v3]
+  B --> D[<font size=4> Joe v1]
+  D --> E[<font size=4> Joe + Shuang v4]
   C --> E
 ```
 
@@ -317,25 +317,25 @@ gitGraph
 
 ```{mermaid}
 sequenceDiagram
-    participant K as Kevin
-    participant GH as GitHub server
     participant S as Shuang
-    K->>K: make change locally & commit to <feature>
-    K->>GH: push commit
-    K->>GH: open pull request
+    participant GH as GitHub server
+    participant J as Joe
+    S->>S: make change locally & commit to <feature>
+    S->>GH: push commit
+    S->>GH: open pull request
     GH->>GH: run automated checks
-    K->>S: request review
-    S->>S: review code
-    S->>K: request changes
-    K->>K: implement changes locally & commit
-    K->>GH: push commit
+    S->>J: request review
+    J->>J: review code
+    J->>S: request changes
+    S->>S: implement changes locally & commit
+    S->>GH: push commit
     GH->>GH: run automated checks
-    K->>S: request review
-    S->>S: review code
-    S->>GH: approve changes, unblocking merge
-    K->>GH: merge <feature> into <main>
+    S->>J: request review
+    J->>J: review code
+    J->>GH: approve changes, unblocking merge
+    S->>GH: merge <feature> into <main>
     GH->>GH: run automated checks on <main>
-    S->>GH: pull newest version of <main>
+    J->>GH: pull newest version of <main>
 ```
 
 ## Looks awefully complicated, why?
