@@ -84,6 +84,8 @@ image: thumbnails/hello.jpg
 
 ```{r}
 #| echo: false
+#| style: font-size:0.95em!important;
+
 readr::read_csv("resources/program.csv", col_types = "cc") |>
   knitr::kable(col.names = c("", ""))
 ```
@@ -94,10 +96,13 @@ readr::read_csv("resources/program.csv", col_types = "cc") |>
     -   all slides
     -   sources available at [github.com/openpharma/workshop-r-swe](https://github.com/openpharma/workshop-r-swe)
     -   all materials CC-BY 4.0
--   We have a chat channel (add link here) for this course that you can connect to
+-   We have a WeChat channel for this course that you can connect to
     -   use to ask your peers questions
     -   will try to monitor during course
--   [menti.com](menti.com): 4458 3431
+
+## Enter WeChat
+
+![](resources/workshop-wechat.jfif)
 
 ## What you will need
 
@@ -111,7 +116,7 @@ readr::read_csv("resources/program.csv", col_types = "cc") |>
 -   Curiosity `r emoji::emoji("curious")`
 -   Positive attitude `r emoji::emoji("smile")`
 
-## Enter Menti
+## Enter menti.com: 4458 3431
 
 ![](resources/mentimeter_qr_code.png)
 
