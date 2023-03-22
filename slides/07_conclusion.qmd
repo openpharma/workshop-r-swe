@@ -1,7 +1,8 @@
 ---
 title: "7 Conclusion"
-author: "Daniel"
+author: "Joe Zhu"
 description: "Discussion of learning experience, summary of workflow, conclusion and next steps.</br>[Photo by Ann H on pexels.com]{.copyright}"
+date: "2023-03-24"
 image: thumbnails/conclusion.jpg
 ---
 
@@ -71,8 +72,7 @@ image: thumbnails/conclusion.jpg
 
 ::: {.column width="70%"}
 -   It was great to teach you today on how to build R packages
--   Let's keep in touch e.g. via [gitter chat channel](https://gitter.im/workshop-r-swe/community) for this course that you can connect to
--   We might do another course in Basel in the future if we get enough interest
+-   Let's keep in touch e.g. via [gitter chat channel](https://gitter.im/workshop-r-swe/community) or wechat channel for this course that you can connect to
 -   We welcome feedback on topics/format/content - reach out!
 :::
 :::
