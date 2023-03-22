@@ -1,6 +1,7 @@
 ---
 title: "3 An R Package Engineering Workflow"
 author: "Daniel"
+date: "2023-03-24"
 description: "Workflow for creating R packages + practical<br/>[Photo CC0 by Andrea Piacquadio on pexels.com]{.copyright}"
 image: thumbnails/workflow.jpg
 ---

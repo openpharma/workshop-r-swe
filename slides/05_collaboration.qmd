@@ -1,6 +1,7 @@
 ---
 title: "5 Version Control & Collaboration"
 author: "Shuang"
+date: "2023-03-24"
 description: "Collaboration via GitHub + practical<br/>[Photo CC0 by THIS IS ZUN on pexels.com]{.copyright}"
 image: thumbnails/collaboration.jpg
 ---

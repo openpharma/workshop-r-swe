@@ -1,6 +1,7 @@
 ---
 title: "1 Introduction"
 author: "Daniel"
+date: "2023-03-24"
 description: "Introduction and outline of program.</br>[Photo CC0 by Mabel Amber on pexels.com]{.copyright}"
 image: thumbnails/hello.jpg
 ---
