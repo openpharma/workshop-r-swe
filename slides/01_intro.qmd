@@ -1,6 +1,6 @@
 ---
 title: "1 Introduction"
-author: "Daniel, Friedrich, Kevin"
+author: "Daniel"
 description: "Introduction and outline of program.</br>[Photo CC0 by Mabel Amber on pexels.com]{.copyright}"
 image: thumbnails/hello.jpg
 ---

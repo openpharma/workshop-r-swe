@@ -1,6 +1,6 @@
 ---
 title: "5 Version Control & Collaboration"
-author: "Kevin"
+author: "Shuang"
 description: "Collaboration via GitHub + practical<br/>[Photo CC0 by THIS IS ZUN on pexels.com]{.copyright}"
 image: thumbnails/collaboration.jpg
 ---

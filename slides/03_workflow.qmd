@@ -1,6 +1,6 @@
 ---
 title: "3 An R Package Engineering Workflow"
-author: "Friedrich"
+author: "Daniel"
 description: "Workflow for creating R packages + practical<br/>[Photo CC0 by Andrea Piacquadio on pexels.com]{.copyright}"
 image: thumbnails/workflow.jpg
 ---
@@ -195,7 +195,7 @@ ggplot(effortData, aes(x = "", y = prop, fill = class)) +
 :::
 
 [^1]: See also [Ensuring Quality](04_quality.html) by
-    [Friedrich](https://www.linkedin.com/in/pahlke)
+    [Joe](https://github.com/shajoezhu)
 
 ## Why practice good engineering?
 
@@ -221,10 +221,9 @@ pexels.com]{.copyright}](thumbnails/workflow3.jpg){fig-align="center"}
 2.  Design docs
 3.  R package programming
 4.  Quality check (see [Ensuring Quality](04_quality.html) by
-    [Friedrich](https://www.linkedin.com/in/pahlke))
+    [Joe](https://github.com/shajoezhu))
 5.  Publication (see [Publication](06_publication.html) by
-    [Daniel](https://www.linkedin.com/in/danielsabanesbove/) and
-    [Friedrich](https://www.linkedin.com/in/pahlke))
+    [Liming](https://github.com/clarkliming))
 6.  Use in production
 
 ## Example - Step 1: Idea
@@ -308,14 +307,14 @@ UML Diagram
 **R package programming**
 
 1.  Create basic package project (see [R Packages](02_r_packages.html) by
-    [Daniel](https://www.linkedin.com/in/danielsabanesbove/))
+    [Liming](https://github.com/clarkliming))
 2.  C&P existing R scripts (one-off scripts, prototype functions) and
     refactor[^6] it if necessary
 3.  Create R generic functions
 4.  Document all functions
 
 [^6]: See also [Ensuring Quality](04_quality.html) by
-    [Friedrich](https://www.linkedin.com/in/pahlke)
+    [Joe](https://github.com/shajoezhu)
 
 ## Example - Step 3: Packaging
 
