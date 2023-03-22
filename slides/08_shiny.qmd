@@ -382,8 +382,61 @@ test_that("my app works", {
 :::
 :::
 
+# Additional Topics
+
+## Security
+
+- Never include passwords in your source code! Instead:
+  - Use environment variables
+  - Or use the `{config}` package
+  - Any files containing passwords must be added to `.gitignore`
+- For user authentication, start with existing solutions that are IT approved
+  - See some best practices [here](https://solutions.rstudio.com/sys-admin/auth/kerberos/) and [here](https://db.rstudio.com/best-practices/deployment/).
+- Code run in `server()` is isolated and cannot be seen by other users
+- Check all user input via assertions or validations to avoid JavaScript hacking
+
+## Packaging
+
+The app should live in an R package. Why? Because we need:
+
+- Metadata and dependencies: from `DESCRIPTION` + `NAMESPACE` files
+- Code split into functions and modules: in files in the the `R` directory
+- Documentation via vignettes, `README`, and function and modules documentation
+- Automated tests: using `testthat` and the native `R CMD check`
+- Able to share the package as tarball or via repositories for installation
+
+## Deployment Options
+
+- [https://www.shinyapps.io/](https://www.shinyapps.io/)
+  - Allows for quick sharing of Shiny apps on the cloud
+  - Free version is good for quick tests or experiments
+  - Serious use needs subscription
+- Internal Posit Connect is internal alternative
+  - More features than above cloud service
+  - One detail example: can use environment variables
+  - See [https://posit.co/products/open-source/shinyserver/](https://posit.co/products/open-source/shinyserver/) for the differences
+
+## Deployment Process
+
+You'll need few extra steps:
+
+1. Instruct the server how to run the app in the package.
+   Simplest is `app.R` in package root folder containing:
+   ```{r, echo = TRUE, eval = FALSE}
+   pkgload::load_all(".")
+   myApp() # = function in your package calling shinyApp()
+   ```
+1. Ignore the `app.R` for package build
+1. Include `shiny` and `pkgload` to the `Imports` in the `DESCRIPTION` file
+1. Run `rsconnect::deployApp()` to share the updated app version!
+
 # References
 
--   Adrian Waddell, Pawel Rucki, Daniel Sabanes Bove (2022).
-    Lessons for designing scalable and maintainable Shiny apps Tutorial at useR 2022.
-    \[[Youtube recording](https://www.youtube.com/watch?v=7o9qjsw4aDU)\]
+- Adrian Waddell, Pawel Rucki, Daniel Sabanes Bove (2022).
+  Lessons for designing scalable and maintainable Shiny apps Tutorial at useR 2022.
+  \[[Youtube recording](https://www.youtube.com/watch?v=7o9qjsw4aDU)\]
+- Hadley Wickham (2020). Mastering Shiny. [https://mastering-shiny.org/](https://mastering-shiny.org/)
+- Colin Fay, Sébastien Rochette, Vincent Guyader and Cervan Girard (2022).
+  Engineering Production-Grade Shiny Apps. [https://engineering-shiny.org/](https://engineering-shiny.org/)
+- Colin Gillespie (2019). R and Security Talk at useR 2019.
+  \[[Youtube recording](https://www.youtube.com/watch?v=5odJxZj9LE4)\]
