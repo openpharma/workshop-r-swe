@@ -8,8 +8,8 @@ image: thumbnails/quality.jpg
 
 # Apply Clean Code Rules
 
-![[Photo CC0 by Pavel Danilyuk on
-pexels.com]{.copyright}](thumbnails/styling.jpg){fig-align="center"}
+![[Photo CC0 by Markus Spiske on
+pexels.com]{.copyright}](thumbnails/code_view.jpg){fig-align="center"}
 
 ## Why is Clean Code important?
 
@@ -42,7 +42,7 @@ y(c(1:7, 100))
 
 . . .
 
-We now refactor it (CCR#9) by applying clean code rules...
+We now refactor it by applying clean code rules...
 
 ## Example: CCR#1
 
