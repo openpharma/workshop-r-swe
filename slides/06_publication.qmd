@@ -1,6 +1,6 @@
 ---
 title: "6 Publication"
-author: "Daniel, Friedrich"
+author: "Liming"
 description: "Publication of R packages + practical<br/>[Photo CC0 by Andrea Piacquadio on pexels.com]{.copyright}"
 image: thumbnails/publish.jpg
 ---
