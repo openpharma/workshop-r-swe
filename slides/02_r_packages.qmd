@@ -1,6 +1,6 @@
 ---
 title: "2 R packages"
-author: "Daniel"
+author: "Liming"
 description: "R package syntax + practical<br/>[Photo CC0 by cottonbro studio on pexels.com]{.copyright}"
 image: thumbnails/packages.jpg
 ---
