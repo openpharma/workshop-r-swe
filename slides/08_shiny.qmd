@@ -1,11 +1,8 @@
 ---
 title: "8 Shiny Development"
 author: "Daniel"
-date: "2023-03-24"
 description: "Best Practices for Shiny App Development<br/>[Photo by Pixabay on pexels.com]{.copyright}"
 image: thumbnails/shiny.jpg
-editor_options: 
-  chunk_output_type: console
 ---
 
 ## Why are best practices important for Shiny?
@@ -13,7 +10,7 @@ editor_options:
 - Shiny is in itself more complex than usual R code
 - Small apps can quickly evolve into giant apps
 - It seems first possible to test everything by hand, clicking around
-- For one-off, throw-away, one-screen Shiny apps that is ok.
+- For one-off, throw-away, one-screen Shiny apps that is ok
 - Here we talk about best practices for more-than-once used Shiny apps
 
 # Design
@@ -132,8 +129,10 @@ server <- function(input, output, session) {
 - Larger Shiny apps will need to live as an R package
 - The business logic best lives in another R package
 - That package can then also be used without the Shiny interface
-- You can use `staged.dependencies` to allow "joint" pull requests
-- Example: `teal.modules.clinical` as the Shiny package, `tern` as a business logic package
+- You can use [`{staged.dependencies}`](https://openpharma.github.io/staged.dependencies/main/) to allow "joint" pull requests
+- Example from the `NEST` package ecosystem: 
+  - `{teal.modules.clinical}` as the Shiny package
+  - `{tern}` as a business logic package
 
 # Modules
 
@@ -202,54 +201,57 @@ Some guidance:
   - `reactive` over `reactiveValues` 
   - `observeEvent` over `observe`
 
-## Reactivity: Resolve early & validate generously
+## Reactivity: Resolve early & validate
 
 ```{r, echo = TRUE}
 #| code-line-numbers: "3-6,8-13"
 server <- function(input, output, session) {
   output$plot <- renderPlot({
-    # resolve reactive values
+    # Resolve reactive values.
     xvar <- input$xvar
     yvar <- input$yvar
     req(xvar, yvar)
     
-    # validate – is it likely that the plot will be meaningful?
+    # Validate – is it likely that the plot will be meaningful?
     validate(
-      need(xvar %in% names(df), glue("xvar \"{xvar}\" does not exist in data")),
-      need(yvar %in% names(df), glue("yvar \"{yvar}\" does not exist in data")),
+      need(xvar %in% names(df), glue("xvar \"{xvar}\" does not exist")),
+      need(yvar %in% names(df), glue("yvar \"{yvar}\" does not exist")),
       need(nrow(df) > 3, "too few data points for meaningful plot")
     )
     
-    # write "business logic" in a unit testable function
     my_special_plot(df[[xvar]], df[[yvar]])
   })
 }
 ```
 
-## Reactivity: Debugging with global variables
+## Reactivity: Debugging techniques
 
-```{r, echo = TRUE}
-#| code-line-numbers: "16"
-server <- function(input, output, session) {
-  output$plot <- renderPlot({
-    # resolve reactive values
-    xvar <- input$xvar
-    yvar <- input$yvar
-    req(xvar, yvar)
-    
-    # validate – is it likely that the plot will be meaningful?
-    validate(
-      need(xvar %in% names(df), glue("xvar \"{xvar}\" does not exist in data")),
-      need(yvar %in% names(df), glue("yvar \"{yvar}\" does not exist in data")),
-      need(nrow(df) > 3, "too few data points for meaningful plot")
-    )
-    
-    # write "business logic" in a unit testable function
-    .GlobalEnv$xvar <- xvar; .GlobalEnv$yvar <- yvar;  stop()
-    my_special_plot(df[[xvar]], df[[yvar]])
-  })
-}
-```
+- Put `browser()` into the functions
+- Jump into browser mode upon error with `options(shiny.error = browser)`
+- Just put `print()` inside the reactives
+- Save variables to global environment via `.GlobalEnv$var <- var` and then check
+- Simplify things until it works and then go back
+
+## Reactivity: Graph visualization
+
+To understand the order of execution we can visualize the reactive graph, 
+which describes how sources and endpoints are connected via conductors.
+
+![](resources/legend.png){fig-align="center"}
+
+::: columns
+::: {.column width="33%"}
+e.g. `input`
+:::
+
+::: {.column width="34%"}
+e.g. `reactive`
+:::
+
+::: {.column width="33%"}
+e.g. `output`
+:::
+:::
 
 ## Reactivity: "Stringy" reactivity graph
 
@@ -311,7 +313,7 @@ test_that("myInput UI works", {
 :::
 
 ::: {.column width="50%"}
-- Shiny UI functions return shiny tag objects, i.e. HTML code
+- Shiny UI functions return `shiny.tag` objects which print as HTML code
 - Can use snapshot tests to avoid accidental changes
 - Value is limited
 - Can create issues sometimes (non-reproducible hashes)
@@ -357,29 +359,28 @@ test_that("server works", {
 ::: columns
 ::: {.column width="50%"}
 ```{r, echo = TRUE, eval = FALSE}
+library(shinytest2)
 test_that("my app works", {
-  library(shinytest)
-  app <- ShinyDriver$new(
-    "myAppDir/",
-    loadTimeout = 1e5, 
-    phantomTimeout = 1e5,
-    debug = "all"
-  ) # app$getDebugLog()
-  app$takeScreenshot()
-  app$setInputs(name = "Hadley")
-  app$getValue("greeting")
+  app <- AppDriver$new(
+    app_dir = "myAppDir",
+    load_timeout = 1e5,
+    variant = platform_variant()
+  ) # app$get_logs()
+  app$wait_for_idle(timeout = 1e5)
+  app$get_screenshot()
+  app$set_inputs(name = "Hadley")
+  app$get_value("greeting")
   app$click("reset")
-  app$getValue("greeting")
+  app$get_value("greeting")
 })
 ```
 :::
 
 ::: {.column width="50%"}
-- `{shinytest2}` is recent alternative
 - Usually the app is defined in `myAppDir/app.R`
-- New app instance from `ShinyDriver$new()`
-- Full Shiny app in a headless browser
-- Can look into it via `takeScreenshot()`
+- New app instance `app` from `AppDriver$new()`
+- Full Shiny app in a headless `chromote` browser
+- Can look into it via `app$get_screenshot()`
 - We can set inputs, get values of inputs/outputs, click buttons etc.
 :::
 :::
@@ -393,8 +394,9 @@ test_that("my app works", {
   - Or use the `{config}` package
   - Any files containing passwords must be added to `.gitignore`
 - For user authentication, start with existing solutions that are IT approved
-  - See some best practices [here](https://solutions.rstudio.com/sys-admin/auth/kerberos/) and [here](https://db.rstudio.com/best-practices/deployment/).
+  - See some best practices [here](https://solutions.posit.co/secure-access/auth/kerberos/) and [here](https://db.rstudio.com/best-practices/deployment/).
 - Code run in `server()` is isolated and cannot be seen by other users
+  - But global environment, e.g. options, are shared across sessions
 - Check all user input via assertions or validations to avoid JavaScript hacking
 
 ## Packaging
