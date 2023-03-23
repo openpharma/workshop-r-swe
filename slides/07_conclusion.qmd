@@ -2,7 +2,6 @@
 title: "7 Conclusion"
 author: "Joe Zhu"
 description: "Discussion of learning experience, summary of workflow, conclusion and next steps.</br>[Photo by Ann H on pexels.com]{.copyright}"
-date: "2023-03-24"
 image: thumbnails/conclusion.jpg
 ---
 

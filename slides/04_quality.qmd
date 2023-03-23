@@ -2,7 +2,6 @@
 title: "4 Ensuring Quality"
 author: "Joe Zhu"
 description: "Package quality + exercise<br/>[Photo CC0 by Pixabay on pexels.com]{.copyright}"
-date: "2023-03-24"
 image: thumbnails/quality.jpg
 ---
 
