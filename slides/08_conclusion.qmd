@@ -7,7 +7,11 @@ image: thumbnails/conclusion.jpg
 
 # Temperature check
 
-## To do
+## Enter menti.com: 7920 6996
+
+![](resources/mentimeter_qr_code_conclusion.png)
+
+##  {background-iframe="https://www.mentimeter.com/app/presentation/al23h9gize6giryqo6jn3kfxw6k7e18p/embed" background-interactive="true"}
 
 # Take away messages
 

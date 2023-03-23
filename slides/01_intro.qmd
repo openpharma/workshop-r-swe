@@ -120,7 +120,7 @@ readr::read_csv("resources/program.csv", col_types = "cc") |>
 
 ## Enter menti.com: 4458 3431
 
-![](resources/mentimeter_qr_code.png)
+![](resources/mentimeter_qr_code_intro.png)
 
 ##  {background-iframe="https://www.mentimeter.com/app/presentation/alunb5x5bjy78a86vwrsac53qhau9uoi/embed" background-interactive="true"}
 
