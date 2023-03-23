@@ -10,3 +10,5 @@ _site
 
 docs
 .luarc.json
+
+/.luarc.json

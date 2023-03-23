@@ -1,7 +1,6 @@
 ---
 title: "1 Introduction"
-author: "Daniel"
-date: "2023-03-24"
+author: "Daniel, Liming, Shuang, Joe"
 description: "Introduction and outline of program.</br>[Photo CC0 by Mabel Amber on pexels.com]{.copyright}"
 image: thumbnails/hello.jpg
 ---
@@ -10,7 +9,7 @@ image: thumbnails/hello.jpg
 
 </br></br></br>
 
-*Any opinions expressed in this presentation and on the following slides are solely those of the presenter and not necessarily those of their respective employer or company.*
+*Any opinions expressed in this presentation and on the following slides are solely those of the presenter and not necessarily those of Roche.*
 
 ## Daniel
 
@@ -27,36 +26,48 @@ image: thumbnails/hello.jpg
 :::
 :::
 
-## Friedrich
+## Liming
 
 ::: columns
 ::: {.column width="70%"}
--   Since 2008 self-employed consultant for computer science and data science as well as biostatistics
--   Co-founder and CEO of RPACT, a company developing the formally validated R package [rpact](https://cran.r-project.org/package=rpact "rpact: Confirmatory Adaptive Clinical Trial Design and Analysis") with 21 releases on CRAN since 2018
--   Trained software architect; R programmer since 2004; R Shiny developer since 2019
--   Feel free to connect at [`r fontawesome::fa("linkedin")` LinkedIn](http://www.linkedin.com/in/pahlke "Friedrich Pahlke at LinkedIn") or [`r fontawesome::fa("github")` Github](https://github.com/fpahlke "Friedrich Pahlke at GitHub")
+-   Master in Biostatistics from Fudan University
+-   Statistical Programmer in Roche for 4 years, technical engineering lead for chevron team in NEST project
+-   Member of ASA BIOP working group on Software Engineering (SWE WG) mmrm taskforce
+-   Feel free to connect at [`r fontawesome::fa("github")` Github](https://github.com/clarkliming "Liming GitHub")
 :::
 
 ::: {.column width="30%"}
-![](resources/friedrich_pahlke.jpg)
+![](resources/liming.jpg)
 :::
 :::
 
-## Kevin
+## Joe
+
+::: columns
+::: {.column width="70%"}
+-   Ph.D. in Statistics
+-   Postdoc at the University of Oxford for 6 years, Data Scientist at Roche for the last 3 years, technical engineering lead for the NEST SME team.
+-   Multiple open-source packages on Github and CRAN, see [this page](https://shajoezhu.github.io/software/) for details.
+-   Feel free to connect at [`r fontawesome::fa("linkedin")` LinkedIn](http://www.linkedin.com/in/joe-zhu-464b5818 "Joe Zhu at LinkedIn") or [`r fontawesome::fa("github")` Github](https://github.com/shajoezhu "Joe Zhu at GitHub")
+:::
+
+::: {.column width="30%"}
+![](resources/joezhu.jpg)
+:::
+:::
+
+## Shuang
 
 ::: columns
 ::: {.column width="30%"}
-![](resources/kevin.jpg)
+![](resources/Shuang.jpg)
 :::
 
 ::: {.column width="70%"}
--   Trained in math, 'statistical engineer' by heart
--   Research associate in Heidelberg & Cambridge
-    -   optimal clinical trial design
-    -   statistical genetics & high dimensional data
--   Methodology statistician with BI since '21
--   R-tist, extensive experience with R packages, version control, and high-performance computing
--   feel free to connect at `r fontawesome::fa("linkedin")` [LinkedIn](https://www.linkedin.com/in/kevin-kunzmann-6486a11bb/) or `r fontawesome::fa("github")` [Github](https://github.com/kkmann)
+-   Master in Pharmacology from Fudan University
+-   5-year experience in clinical data management, curation and related R tools development
+-   Technical Lead of several data FARIification R packages, co-auther of the Restrict Data Check Shiny App and the Raw Data Compare R Package
+-   Feel free to connect at [`r fontawesome::fa("github")` Github](https://github.com/shuangli22 "Shuang GitHub")
 :::
 :::
 
@@ -69,25 +80,31 @@ image: thumbnails/hello.jpg
 -   Get crash-course in version control to stay organized
 -   Try out modern collaboration techniques on GitHub.com
 -   Learn how to make an R `r fontawesome::fa("cube")` available to others
+-   Get a starting point for sustainable Shiny app development
 
 ## Program outline
 
 ```{r}
 #| echo: false
+#| style: font-size:0.95em!important;
+
 readr::read_csv("resources/program.csv", col_types = "cc") |>
   knitr::kable(col.names = c("", ""))
 ```
 
 ## House-keeping
 
--   Course website at [kkmann.github.io/workshop-r-swe](https://kkmann.github.io/workshop-r-swe)
+-   Course website at [openpharma.github.io/workshop-r-swe](https://openpharma.github.io/workshop-r-swe)
     -   all slides
-    -   sources available at [github.com/kkmann/workshop-r-swe](https://github.com/kkmann/workshop-r-swe)
+    -   sources available at [github.com/openpharma/workshop-r-swe](https://github.com/openpharma/workshop-r-swe)
     -   all materials CC-BY 4.0
--   We have a [gitter chat channel](https://gitter.im/workshop-r-swe/community) for this course that you can connect to
+-   We have a WeChat channel for this course that you can connect to
     -   use to ask your peers questions
     -   will try to monitor during course
--   [slido.com](https://www.slido.com): #3112331
+
+## Enter WeChat
+
+![](resources/workshop-wechat.jfif)
 
 ## What you will need
 
@@ -101,7 +118,11 @@ readr::read_csv("resources/program.csv", col_types = "cc") |>
 -   Curiosity `r emoji::emoji("curious")`
 -   Positive attitude `r emoji::emoji("smile")`
 
-##  {background-iframe="https://wall.sli.do/event/aw8yLdhevoVZxt8CJ5ytHG?section=36e6981e-61e0-418c-aaf4-954adbedfd81" background-interactive="true"}
+## Enter menti.com: 4458 3431
+
+![](resources/mentimeter_qr_code.png)
+
+##  {background-iframe="https://www.mentimeter.com/app/presentation/alunb5x5bjy78a86vwrsac53qhau9uoi/embed" background-interactive="true"}
 
 ## What do we mean by GSWEP4R\*?
 
@@ -144,7 +165,7 @@ if (!file.exists("resources/pkg_graph.png")) { # primitive caching
   library(tidyverse)
   local({
     r <- getOption("repos")
-    r["CRAN"] <- "https://cloud.r-project.org" 
+    r["CRAN"] <- "https://cloud.r-project.org"
     options(repos = r)
   })
   # get pkg cumulative downloads from last month
@@ -170,17 +191,17 @@ if (!file.exists("resources/pkg_graph.png")) { # primitive caching
   tbl_deps <- tools::package_dependencies(
         tbl_dl$package,
         which = c("Imports", "Depends", "LinkingTo")
-      ) %>% 
-      enframe(name = "from", value = "to") %>% 
+      ) %>%
+      enframe(name = "from", value = "to") %>%
       unnest(to)
-  grph_deps <- tidygraph::as_tbl_graph(tbl_deps) %>% 
+  grph_deps <- tidygraph::as_tbl_graph(tbl_deps) %>%
     left_join(
       tbl_dl_,
       by = c(name = "package")
-    ) %>% 
+    ) %>%
     filter(!is.na(count)) # remove base packages
   plt <- ggraph::ggraph(grph_deps, layout = "linear", circular = TRUE) +
-      ggraph::geom_edge_link(alpha = .033) + 
+      ggraph::geom_edge_link(alpha = .033) +
       ggraph::geom_node_label(
           aes(label = if_else(count > quantile(count, 0.975, na.rm = TRUE), name, NA_character_)),
           repel = TRUE
@@ -204,4 +225,4 @@ knitr::include_graphics("resources/pkg_graph.png")
     -   shareable
     -   easier to document
 
-# Question, Comments? 
+# Question, Comments?
