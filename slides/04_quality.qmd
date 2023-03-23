@@ -441,13 +441,6 @@ Unit tests help to increase the reliability and maintainability of the code
 ![[Photo CC0 by cottonbro studio on
 pexels.com]{.copyright}](thumbnails/coding_cottonbro-studio.jpg){fig-align="center"}
 
-## Please install the following packages before we moving on
-
-```R
-install.packages(c("DT", "htmltools",
-  "testthat", "rlang", "checkmate", "covr", "styler", "devtools"))
-```
-
 
 ## How to realize testing with R?
 
@@ -653,6 +646,13 @@ How to link the [styler](https://styler.r-lib.org)[^10] package to a keyboard sh
 
 ![[Photo CC0 by Pixabay on
 pexels.com]{.copyright}](thumbnails/exercise.jpg){fig-align="center"}
+
+## Please install the following packages before we moving on
+
+```R
+install.packages(c("DT", "htmltools",
+  "testthat", "rlang", "checkmate", "covr", "styler", "devtools"))
+```
 
 ## Tasks
 
