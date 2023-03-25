@@ -57,6 +57,7 @@ reference:
   - GitHub actions automatically render the website when the `main` branch
     is updated
 - To get started, use `usethis::use_pkgdown_github_pages()`
+  - Or, manually deploy site with `pkgdown::deploy_to_branch()`
 
 ##  {background-iframe="https://openpharma.github.io/mmrm/main/" background-interactive="true"}
 
@@ -222,8 +223,11 @@ Maintainer: 'Friedrich Pahlke'
 
 # Exercise
 
+Use the same repository created from template https://github.com/kkmann/simulatr
+
 - Run CRAN like checks in RStudio: use `--as-cran` in check options
 - Look at the CI/CD checks reported on your GitHub repository
   - Where are the `R CMD check` results?
-- Deploy the `pkgdown` website with `usethis`
-
+- Deploy the website with `pkgdown`
+  - Need to change remote to `git`
+  - (Optional) Check the automatic github page deploy action
