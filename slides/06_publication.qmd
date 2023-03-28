@@ -223,7 +223,7 @@ Maintainer: 'Friedrich Pahlke'
 
 # Exercise
 
-Use the same repository created from template https://github.com/kkmann/simulatr
+Use the same repository created from template [https://github.com/kkmann/simulatr](https://github.com/kkmann/simulatr)
 
 - Run CRAN like checks in RStudio: use `--as-cran` in check options
 - Look at the CI/CD checks reported on your GitHub repository
