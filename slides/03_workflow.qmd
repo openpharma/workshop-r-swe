@@ -1,6 +1,6 @@
 ---
 title: "3 An R Package Engineering Workflow"
-author: "Daniel"
+author: "Laura"
 description: "Workflow for creating R packages + practical<br/>[Photo CC0 by Andrea Piacquadio on pexels.com]{.copyright}"
 image: thumbnails/workflow.jpg
 ---
@@ -221,9 +221,9 @@ pexels.com]{.copyright}](thumbnails/workflow3.jpg){fig-align="center"}
 2.  Design docs
 3.  R package programming
 4.  Quality check (see [Ensuring Quality](04_quality.html) by
-    [Joe](https://github.com/shajoezhu))
+    [Matt](https://github.com/mattsecrest))
 5.  Publication (see [Publication](06_publication.html) by
-    [Liming](https://github.com/clarkliming))
+    [Ya](https://github.com/ywang-gilead))
 6.  Use in production
 
 ## Example - Step 1: Idea

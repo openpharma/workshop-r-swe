@@ -11,20 +11,19 @@ image: thumbnails/hello.jpg
 
 *Any opinions expressed in this presentation and on the following slides are solely those of the presenter and not necessarily those of Roche.*
 
-## Daniel
+## Ya
 
 ::: columns
 ::: {.column width="30%"}
-![](resources/daniel.jpg)
+![](resources/ya.jpg)
 :::
 
 ::: {.column width="70%"}
--   Statistician (Ph.D. in 2013 on Bayesian Model Selection)
--   Biostatistician at Roche for 5 years, Data Scientist at Google for 2 years, Statistical Software Engineer at Roche for the last 3 years
--   Multiple R packages on CRAN and Bioconductor, co-wrote book on Likelihood and Bayesian Inference, chair of the ASA BIOP working group on Software Engineering (SWE WG)
--   feel free to connect at `r fontawesome::fa("linkedin")` [LinkedIn](https://www.linkedin.com/in/danielsabanesbove/) or `r fontawesome::fa("github")` [Github](https://github.com/danielinteractive)
+-   Statistician
+-   Feel free to connect at 
 :::
 :::
+
 
 ## Matt
 
@@ -41,35 +40,22 @@ image: thumbnails/hello.jpg
 :::
 :::
 
-## Joe
+## Laura
 
 ::: columns
 ::: {.column width="70%"}
--   Ph.D. in Statistics
--   Postdoc at the University of Oxford for 6 years, Data Scientist at Roche for the last 3 years, technical engineering lead for the NEST SME team.
--   Multiple open-source packages on Github and CRAN, see [this page](https://shajoezhu.github.io/software/) for details.
--   Feel free to connect at [`r fontawesome::fa("linkedin")` LinkedIn](http://www.linkedin.com/in/joe-zhu-464b5818 "Joe Zhu at LinkedIn") or [`r fontawesome::fa("github")` Github](https://github.com/shajoezhu "Joe Zhu at GitHub")
+-   Masters in Public Health, Biostatistics
+-   Biostatistician at Denali for 2 years; Head of Data Science & Statistical Programming R team at Denali for 4 years; 12 years in Statistical Programming, OMNI Biomarker Development, and Clinical Pharmacology Modeling and Simulation at Genentech; Biostatistician at a Pharma CRO and at UCSF.
+-   Development of data simulation packages and Shiny analysis applications at Denali
+-   Feel free to connect at `r fontawesome::fa("linkedin")` [LinkedIn](https://www.linkedin.com/in/laura-h-33a96635/) or `r fontawesome::fa("github")` [Github](https://github.com/laurapharris "Laura Harris at GitHub")
 :::
 
 ::: {.column width="30%"}
-![](resources/joezhu.jpg)
+![](resources/laura.jpg)
 :::
 :::
 
-## Shuang
 
-::: columns
-::: {.column width="30%"}
-![](resources/Shuang.jpg)
-:::
-
-::: {.column width="70%"}
--   Master in Pharmacology from Fudan University
--   5-year experience in clinical data management, curation and related R tools development
--   Technical Lead of several data FARIification R packages, co-auther of the Restrict Data Check Shiny App and the Raw Data Compare R Package
--   Feel free to connect at [`r fontawesome::fa("github")` Github](https://github.com/shuangli22 "Shuang GitHub")
-:::
-:::
 
 ## What you will learn today
 
