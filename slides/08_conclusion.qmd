@@ -7,6 +7,11 @@ image: thumbnails/conclusion.jpg
 
 # Temperature check
 
+```{r, echo = FALSE, results = 'hide'}
+# Workaround for the following Quarto issue (do not remove):
+# Quarto will not render embedded R code unless at least one R code chunk exists
+```
+
 ## Enter menti.com: 7920 6996
 
 ![](resources/mentimeter_qr_code_conclusion.png)
@@ -86,3 +91,11 @@ image: thumbnails/conclusion.jpg
 -   Start building your first own package and share internally first
 -   Later publish it open source on GitHub and submit it to CRAN
 -   Learn about more tips and tricks how to extend R
+
+# License information
+
+- Creators (initial authors): 
+    - Daniel Sabanes Bove [`r fontawesome::fa("github")`](https://github.com/danielinteractive/) [`r fontawesome::fa("linkedin")`](https://www.linkedin.com/in/danielsabanesbove/)
+- This work is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+- The source files are hosted at [github.com/openpharma/workshop-r-swe](https://github.com/openpharma/workshop-r-swe), which is forked from the original version at [github.com/kkmann/workshop-r-swe](https://github.com/kkmann/workshop-r-swe/).
+- Important: To use this work you must provide the name of the creators (initial authors), a link to the material, a link to the license, and indicate if changes were made

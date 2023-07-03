@@ -7,6 +7,11 @@ image: thumbnails/publish.jpg
 
 # Website with `pkgdown`
 
+```{r, echo = FALSE, results = 'hide'}
+# Workaround for the following Quarto issue (do not remove):
+# Quarto will not render embedded R code unless at least one R code chunk exists
+```
+
 ## Setup of `pkgdown`
 
 - `pkgdown` makes it quick and easy to build a website for your package
@@ -233,3 +238,14 @@ Use the same repository created from template [https://github.com/kkmann/simulat
   - Need to change remote to `git`
 - Deploy the website through `use_github_action("pkgdown")`
   - (Optional) Check the automatic github page deploy action
+  
+# License information
+
+- Creators (initial authors): 
+    - Daniel Sabanes Bove [`r fontawesome::fa("github")`](https://github.com/danielinteractive/) [`r fontawesome::fa("linkedin")`](https://www.linkedin.com/in/danielsabanesbove/)
+    - Friedrich Pahlke [`r fontawesome::fa("github")`](https://github.com/fpahlke/) [`r fontawesome::fa("linkedin")`](https://www.linkedin.com/in/pahlke/)
+In the current version, changes were done by (later authors):
+    - Liming Li [`r fontawesome::fa("github")`](https://github.com/clarkliming)
+- This work is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+- The source files are hosted at [github.com/openpharma/workshop-r-swe](https://github.com/openpharma/workshop-r-swe), which is forked from the original version at [github.com/kkmann/workshop-r-swe](https://github.com/kkmann/workshop-r-swe/).
+- Important: To use this work you must provide the name of the creators (initial authors), a link to the material, a link to the license, and indicate if changes were made

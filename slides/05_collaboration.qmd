@@ -9,8 +9,12 @@ image: thumbnails/collaboration.jpg
 
 </br></br></br>
 
-*Any opinions expressed in this presentation and on the following slides are solely those of the presenter and not necessarily those of their respective employer or company.*
+```{r, echo = FALSE, results = 'hide'}
+# Workaround for the following Quarto issue (do not remove):
+# Quarto will not render embedded R code unless at least one R code chunk exists
+```
 
+*Any opinions expressed in this presentation and on the following slides are solely those of the presenter and not necessarily those of their respective employer or company.*
 
 ##  {background-image="resources/scratch.jpg"}
 
@@ -367,3 +371,13 @@ sequenceDiagram
 -   **Can you fix the errors with some pull requests?**
 -   The purpose of this exercise is to explore the collaboration
     functionality of GitHub - not to produce a perfect package ;)
+
+# License information
+
+- Creators (initial authors): 
+    - Kevin Kunzmann [`r fontawesome::fa("github")`](https://github.com/kkmann/) [`r fontawesome::fa("linkedin")`](https://www.linkedin.com/in/kevin-kunzmann-6486a11bb/)
+In the current version, changes were done by (later authors):
+    - Shuang Li [`r fontawesome::fa("github")`](https://github.com/shuangli22)
+- This work is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+- The source files are hosted at [github.com/openpharma/workshop-r-swe](https://github.com/openpharma/workshop-r-swe), which is forked from the original version at [github.com/kkmann/workshop-r-swe](https://github.com/kkmann/workshop-r-swe/).
+- Important: To use this work you must provide the name of the creators (initial authors), a link to the material, a link to the license, and indicate if changes were made

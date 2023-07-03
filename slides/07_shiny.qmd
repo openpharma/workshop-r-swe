@@ -444,3 +444,12 @@ You'll need few extra steps:
   Engineering Production-Grade Shiny Apps. [https://engineering-shiny.org/](https://engineering-shiny.org/)
 - Colin Gillespie (2019). R and Security Talk at useR 2019.
   \[[Youtube recording](https://www.youtube.com/watch?v=5odJxZj9LE4)\]
+  
+# License information
+
+- Creators (initial authors): 
+    - Daniel Sabanes Bove [`r fontawesome::fa("github")`](https://github.com/danielinteractive/) [`r fontawesome::fa("linkedin")`](https://www.linkedin.com/in/danielsabanesbove/)
+    - Joe Zhu [`r fontawesome::fa("github")`](https://github.com/shajoezhu) [`r fontawesome::fa("linkedin")`](http://www.linkedin.com/in/joe-zhu-464b5818)
+- This work is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+- The source files are hosted at [github.com/openpharma/workshop-r-swe](https://github.com/openpharma/workshop-r-swe).
+- Important: To use this work you must provide the name of the creators (initial authors), a link to the material, a link to the license, and indicate if changes were made

@@ -705,3 +705,13 @@ Check if your package is ready for use in production with the
     Taylor & Francis Inc. \[[Book](https://amzn.to/3Bk6elt)\]
 -   Martin, R. (2008). Clean Code: A Handbook of Agile Software Craftsmanship
     (1st Edition). Prentice Hall. \[[Book](https://amzn.to/3IKuSS4)\]
+
+# License information
+
+- Creators (initial authors): 
+    - Friedrich Pahlke [`r fontawesome::fa("github")`](https://github.com/fpahlke/) [`r fontawesome::fa("linkedin")`](https://www.linkedin.com/in/pahlke/)
+In the current version, changes were done by (later authors):
+    - Joe Zhu [`r fontawesome::fa("github")`](https://github.com/shajoezhu) [`r fontawesome::fa("linkedin")`](http://www.linkedin.com/in/joe-zhu-464b5818)
+- This work is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+- The source files are hosted at [github.com/openpharma/workshop-r-swe](https://github.com/openpharma/workshop-r-swe), which is forked from the original version at [github.com/kkmann/workshop-r-swe](https://github.com/kkmann/workshop-r-swe/).
+- Important: To use this work you must provide the name of the creators (initial authors), a link to the material, a link to the license, and indicate if changes were made
