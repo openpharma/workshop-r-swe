@@ -375,9 +375,9 @@ sequenceDiagram
 # License information
 
 - Creators (initial authors): 
-    - Kevin Kunzmann [`r fontawesome::fa("github")`](https://github.com/kkmann/) [`r fontawesome::fa("linkedin")`](https://www.linkedin.com/in/kevin-kunzmann-6486a11bb/)
-In the current version, changes were done by (later authors):
-    - Shuang Li [`r fontawesome::fa("github")`](https://github.com/shuangli22)
+  Kevin Kunzmann [`r fontawesome::fa("github")`](https://github.com/kkmann/) [`r fontawesome::fa("linkedin")`](https://www.linkedin.com/in/kevin-kunzmann-6486a11bb/)
+- In the current version, changes were done by (later authors):
+  Shuang Li [`r fontawesome::fa("github")`](https://github.com/shuangli22)
 - This work is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 - The source files are hosted at [github.com/openpharma/workshop-r-swe](https://github.com/openpharma/workshop-r-swe), which is forked from the original version at [github.com/kkmann/workshop-r-swe](https://github.com/kkmann/workshop-r-swe/).
 - Important: To use this work you must provide the name of the creators (initial authors), a link to the material, a link to the license, and indicate if changes were made
